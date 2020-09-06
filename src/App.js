@@ -18,12 +18,12 @@ const App = () => {
 		useTransition({ key: 1, text: <h4>Lead Software Development Engineer</h4> }, item => item.key, {
 			from: { transform: 'translate3d(-800px, 0, 0)' },
 			enter: { transform: 'translate3d(0, 0, 0)' },
-			config: { duration: 1500 }
+			config: { duration: 1200 }
 		}),
 		useTransition({ key: 1, text: <p>Have loved coding since 2007</p> }, item => item.key, {
 			from: { transform: 'translate3d(800px, 0, 0)' },
 			enter: { transform: 'translate3d(0, 0, 0)' },
-			config: { duration: 2000 }
+			config: { duration: 1300 }
 		})
 	];
 
@@ -36,16 +36,22 @@ const App = () => {
 			)
 		);
 		
-	const { transform: transformLeft } = useSpring({
+	const { transform: transformLeft500 } = useSpring({
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
 	});
 	
-	const { transform: transformRight } = useSpring({
+	const { transform: transformRight700 } = useSpring({
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(0deg)'},
-		config: { duration: 500 }
+		config: { duration: 700 }
+	});
+	
+	const { transform: transformLeft800 } = useSpring({
+		from: {transform: 'perspective(600px) rotateY(180deg)'},
+		to: {transform: 'perspective(600px) rotateY(360deg)'},
+		config: { duration: 800 }
 	});
 
 	return (
@@ -58,13 +64,13 @@ const App = () => {
 								{transitionComponents}
 								<h4>@merizrizal</h4>
 								<p>Nice to meet you!</p>
-								<animated.a className="primary_btn btn-block" style={{transform: transformLeft}} href="https://medium.com/@merizrizal">
+								<animated.a className="primary_btn btn-block" style={{transform: transformLeft500}} href="https://medium.com/@merizrizal">
 									<span><i className="fab fa-medium"></i> &nbsp; &nbsp;My Articles</span>
 								</animated.a>
-								<animated.a className="primary_btn btn-block" style={{transform: transformRight}} href="https://github.com/merizrizal">
+								<animated.a className="primary_btn btn-block" style={{transform: transformRight700}} href="https://github.com/merizrizal">
 									<span><i className="fab fa-github"></i> &nbsp; &nbsp;Projects in Github</span>
 								</animated.a>
-								<animated.a className="primary_btn btn-block" style={{transform: transformLeft}}  href="https://www.linkedin.com/in/merizrizal/">
+								<animated.a className="primary_btn btn-block" style={{transform: transformLeft800}}  href="https://www.linkedin.com/in/merizrizal/">
 									<span><i className="fab fa-linkedin"></i> &nbsp; &nbsp;Linkedin Profile</span>
 								</animated.a>
 							</div>
