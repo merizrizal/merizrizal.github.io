@@ -13,7 +13,7 @@ const App = () => {
 	
 	const components = [
 		useTransition({ key: 1, text: <h1>Hi I'm Mei Rizal</h1> }, item => item.key, {
-			ref: transRefs[2],
+			ref: transRefs[0],
 			from: { transform: 'translate3d(0, -800px, 0)', opacity: 0 },
 			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
 			trail: 300,
@@ -27,7 +27,7 @@ const App = () => {
 			config: { duration: 500 }
 		}),
 		useTransition({ key: 1, text: <p>Have loved coding since 2007</p> }, item => item.key, {
-			ref: transRefs[0],
+			ref: transRefs[2],
 			from: { transform: 'translate3d(800px, 0, 0)', opacity: 0 },
 			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
 			trail: 300,
@@ -35,7 +35,7 @@ const App = () => {
 		})
 	];
 	
-	useChain(transRefs, [1, 0.5, 0]);
+	useChain(transRefs);
 
 	const transitionComponents = 
 		components.map((component) => 
@@ -49,7 +49,7 @@ const App = () => {
 	const springRefs = [useRef(), useRef(), useRef()];
 	
 	const { transform: transformArticle } = useSpring({
-		ref: springRefs[2],
+		ref: springRefs[0],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
@@ -63,13 +63,13 @@ const App = () => {
 	});
 	
 	const { transform: transformLinkedin } = useSpring({
-		ref: springRefs[0],
+		ref: springRefs[2],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
 	});
 	
-	useChain(springRefs, [1, 0.5, 0]);
+	useChain(springRefs);
 
 	return (
 		<AppContainer>
