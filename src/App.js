@@ -14,23 +14,23 @@ const App = () => {
 	const components = [
 		useTransition({ key: 1, text: <h1>Hi I'm Mei Rizal</h1> }, item => item.key, {
 			ref: transRefs[2],
-			from: { transform: 'translate3d(0, -800px, 0)' },
-			enter: { transform: 'translate3d(0, 0, 0)' },
+			from: { transform: 'translate3d(0, -800px, 0)', opacity: 0 },
+			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
 			trail: 300,
 			config: { duration: 500 }
 		}),
 		useTransition({ key: 1, text: <h4>Lead Software Development Engineer</h4> }, item => item.key, {
 			ref: transRefs[1],
-			from: { transform: 'translate3d(-800px, 0, 0)' },
-			enter: { transform: 'translate3d(0, 0, 0)' },
+			from: { transform: 'translate3d(-800px, 0, 0)', opacity: 0 },
+			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
 			trail: 300,
 			config: { duration: 500 }
 		}),
 		useTransition({ key: 1, text: <p>Have loved coding since 2007</p> }, item => item.key, {
 			ref: transRefs[0],
-			from: { transform: 'translate3d(800px, 0, 0)' },
-			enter: { transform: 'translate3d(0, 0, 0)' },
-			trail: 100,
+			from: { transform: 'translate3d(800px, 0, 0)', opacity: 0 },
+			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
+			trail: 300,
 			config: { duration: 500 }
 		})
 	];
