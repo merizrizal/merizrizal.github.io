@@ -35,7 +35,7 @@ const App = () => {
 		})
 	];
 	
-	useChain(transRefs, [2, 1]);
+	useChain(transRefs, [1, 0.5, 0]);
 
 	const transitionComponents = 
 		components.map((component) => 
@@ -48,28 +48,28 @@ const App = () => {
 		
 	const springRefs = [useRef(), useRef(), useRef()];
 	
-	const { transform: transformLeft500 } = useSpring({
+	const { transform: transformArticle } = useSpring({
 		ref: springRefs[2],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
 	});
 	
-	const { transform: transformRight700 } = useSpring({
+	const { transform: transformGithub } = useSpring({
 		ref: springRefs[1],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(0deg)'},
 		config: { duration: 500 }
 	});
 	
-	const { transform: transformLeft800 } = useSpring({
+	const { transform: transformLinkedin } = useSpring({
 		ref: springRefs[0],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
 	});
 	
-	useChain(springRefs, [2, 1]);
+	useChain(springRefs, [1, 0.5, 0]);
 
 	return (
 		<AppContainer>
@@ -81,13 +81,13 @@ const App = () => {
 								{transitionComponents}
 								<h4>@merizrizal</h4>
 								<p>Nice to meet you!</p>
-								<animated.a className="primary_btn btn-block" style={{transform: transformLeft500}} href="https://medium.com/@merizrizal">
+								<animated.a className="primary_btn btn-block" style={{transform: transformArticle}} href="https://medium.com/@merizrizal">
 									<span><i className="fab fa-medium"></i> &nbsp; &nbsp;My Articles</span>
 								</animated.a>
-								<animated.a className="primary_btn btn-block" style={{transform: transformRight700}} href="https://github.com/merizrizal">
+								<animated.a className="primary_btn btn-block" style={{transform: transformGithub}} href="https://github.com/merizrizal">
 									<span><i className="fab fa-github"></i> &nbsp; &nbsp;Projects in Github</span>
 								</animated.a>
-								<animated.a className="primary_btn btn-block" style={{transform: transformLeft800}}  href="https://www.linkedin.com/in/merizrizal/">
+								<animated.a className="primary_btn btn-block" style={{transform: transformLinkedin}}  href="https://www.linkedin.com/in/merizrizal/">
 									<span><i className="fab fa-linkedin"></i> &nbsp; &nbsp;Linkedin Profile</span>
 								</animated.a>
 							</div>
