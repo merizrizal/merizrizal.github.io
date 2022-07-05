@@ -25,7 +25,7 @@ const App = () => {
 			trail: 300,
 			config: { duration: 500 }
 		}),
-		useTransition({ key: 1, text: <p>Have loved coding since 2007</p> }, item => item.key, {
+		useTransition({ key: 1, text: <p>Have been loving to code since 2007</p> }, item => item.key, {
 			ref: transRefs[2],
 			from: { transform: 'translate3d(800px, 0, 0)', opacity: 0 },
 			enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
