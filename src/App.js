@@ -81,7 +81,7 @@ const App = () => {
 								{transitionComponents}
 								<h4>@merizrizal</h4>
 								<p>Nice to meet you!</p>
-								<animated.a className="primary_btn btn-block" style={{transform: transformArticle}} href="https://medium.com/@merizrizal">
+								<animated.a className="primary_btn btn-block" style={{transform: transformArticle}} href="https://merizrizal.medium.com/">
 									<span><i className="fab fa-medium"></i> &nbsp; &nbsp;My Articles</span>
 								</animated.a>
 								<animated.a className="primary_btn btn-block" style={{transform: transformGithub}} href="https://github.com/merizrizal">
