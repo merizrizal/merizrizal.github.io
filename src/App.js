@@ -1,15 +1,14 @@
-import React, { useRef } from 'react';
-import { useTransition, useSpring, useChain, animated } from 'react-spring';
-import styled from 'styled-components';
+import React, { useRef } from 'react'
+import { animated, useChain, useSpring, useTransition } from 'react-spring'
+import styled from 'styled-components'
 
 const AppContainer = styled.div`
     margin: 1rem;
     color: #222222;
-`;
+`
 
 const App = () => {
-
-	const transRefs = [useRef(), useRef(), useRef()];
+	const transRefs = [useRef(), useRef(), useRef()]
 	
 	const components = [
 		useTransition({ key: 1, text: <h1>Hi I'm Mei Rizal</h1> }, item => item.key, {
@@ -33,9 +32,9 @@ const App = () => {
 			trail: 300,
 			config: { duration: 500 }
 		})
-	];
+	]
 	
-	useChain(transRefs);
+	useChain(transRefs)
 
 	const transitionComponents = 
 		components.map((component) => 
@@ -44,32 +43,32 @@ const App = () => {
 					key={key}
 					style={props}>{item.text}</animated.div>
 			)
-		);
+		)
 		
-	const springRefs = [useRef(), useRef(), useRef()];
+	const springRefs = [useRef(), useRef(), useRef()]
 	
 	const { transform: transformArticle } = useSpring({
 		ref: springRefs[0],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
-	});
+	})
 	
 	const { transform: transformGithub } = useSpring({
 		ref: springRefs[1],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(0deg)'},
 		config: { duration: 500 }
-	});
+	})
 	
 	const { transform: transformLinkedin } = useSpring({
 		ref: springRefs[2],
 		from: {transform: 'perspective(600px) rotateY(180deg)'},
 		to: {transform: 'perspective(600px) rotateY(360deg)'},
 		config: { duration: 500 }
-	});
+	})
 	
-	useChain(springRefs);
+	useChain(springRefs)
 
 	return (
 		<AppContainer>
@@ -96,7 +95,7 @@ const App = () => {
 				</div>
 			</section>
 		</AppContainer>
-	);
-};
+	)
+}
 
-export default App;
+export default App
